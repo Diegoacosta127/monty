@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	int fd, i, j;
 	char buf[1024], *tok[1024];
-	
+
 	if (argc != 2)
 	{
 		printf("USAGE: monty file\n");
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	}
 	j = 0;
 	printf("tokenizó todo el archivo\n");
-	while(*(tok + j))
+	while (*(tok + j))
 	{
 		printf("%s\n", *(tok + j));
 		j++;
