@@ -10,8 +10,8 @@ void *get_function(char **list)
 	char *command;
 	stack_t *stack = NULL;
 	instruction_t instr_list[] = {
-		{"push", NULL},
-		{"pall", NULL},
+		{"push", push},
+		{"pall", pall},
 		{"pop", NULL},
 		{"pint", NULL},
 		{"swap", NULL},
