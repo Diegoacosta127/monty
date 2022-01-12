@@ -82,7 +82,7 @@ void pop(stack_t **stack, unsigned int line_number)
  * @stack: head of stack (double linked list)
  * @line_number: line number in file
  */
-void swap(stack_t **stack, unsigned int line_number)
+void swap(stack_t **stack, unsigned int line)
 {
 	int aux1, aux2, len = 0;
 	stack_t *aux = *stack;
@@ -94,7 +94,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	}
 	if (len < 2)
 	{
-		printf("L%u: can't swap, stack too short", line_number);
+		fprintf(stderr,"L%u: can't swap, stack too short", line);
 		exit(EXIT_FAILURE);
 	}
 	aux1 = (*stack)->n;
