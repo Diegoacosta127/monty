@@ -24,7 +24,10 @@ void *get_function(char **list)
 	{
 		i = 0;
 		command = strtok(list[position], " ");
-		// printf("2strtok - %s\n", command);
+		printf("2strtok - %s\n", command);
+		/* if line starts with a space char at this point, skip*/
+		if (command == 0)
+			continue;
 		/*for each line.opcode in instructions struct*/
 		while (instr_list[i].opcode)
 		{

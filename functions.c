@@ -6,13 +6,23 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
+	char *numstr;
+	int correct;
 	stack_t *new = malloc(sizeof(stack_t));
 	if (!new)
 		exit(EXIT_FAILURE);
-	new->n = atoi(strtok(NULL, " "));
+	numstr = strtok(NULL, " ");
+	if (numstr[0] == '0')
+		new->n = 0;
+	else
+	{
+		correct = atoi(numstr);
+		new->n = correct;
+	}
+	printf("3strtok - %d\n", new->n);
 	new->prev = NULL;
 	new->next = NULL;
-	if (!new->n)
+	if (!correct)
 	{
 		fprintf(stderr, "L%u: usage: push integer", line_number);
 		exit(EXIT_FAILURE);
