@@ -12,8 +12,8 @@ void *get_function(char **list)
 	instruction_t instr_list[] = {
 		{"push", push},
 		{"pall", pall},
-		{"pop", NULL},
-		{"pint", NULL},
+		{"pop", pop},
+		{"pint", pint},
 		{"swap", NULL},
 		{"add", NULL},
 		{NULL, NULL}
@@ -26,7 +26,7 @@ void *get_function(char **list)
 		while (instr_list[i].opcode)
 		{
 			if (strcmp(instr_list[i].opcode, command) == 0)
-				instr_list[i].f(&stack, pos);
+				instr_list[i].f(&stack, position);
 			i++;
 		}
 	}
