@@ -13,7 +13,7 @@ void sub(stack_t **stack, unsigned int line_number)
  * @stack: head of stack (double linked list)
  * @line_number: line number in file
  */
-void div(stack_t **stack, unsigned int line_number)
+void divide(stack_t **stack, unsigned int line_number)
 {
 
 }
