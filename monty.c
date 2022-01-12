@@ -7,7 +7,7 @@
   */
 int main(int argc, char *argv[])
 {
-	int fd, i, j;
+	int fd, i, j, sizef;
 	char buf[1024], *tok[1024];
 
 	if (argc != 2)
@@ -21,20 +21,19 @@ int main(int argc, char *argv[])
 		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	read(fd, buf, 1024);
+	sizef = read(fd, buf, 1024);
+	buf[sizef] = 0;
+	printf("buffer - %s\n", buf);
+	printf("--------------\n");
 	tok[0] = strtok(buf, "\n");
-	//printf("Hizo un strtok\n");
-	for (i = 0; *(tok + i);)
+	printf("strtok - %s\n", tok[0]);
+	for (i = 0; tok[i];)
 	{
 		i++;
-		*(tok + i) = strtok(NULL, "\n");
+		tok[i] = strtok(NULL, "\n");
+		printf("strtok - %s\n", tok[i]);
 	}
-	//printf("tokenizó todo el archivo\n");
-	for (j = 0; *(tok + j); j++)
-	{
-		printf("voy a entrar a get_function\n");
-		get_function(tok);
-
-	}
+	printf("voy a entrar a get_function\n");
+	get_function(tok);
 	return (0);
 }

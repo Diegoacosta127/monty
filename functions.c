@@ -48,7 +48,7 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 }
 /**
- * pint - prints all values on the stack, starting from the the bottom
+ * pint - prints value on the top of the stack
  * @stack: head of stack (double linked list)
  * @line_number: line number in file
  */

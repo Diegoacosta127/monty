@@ -48,7 +48,7 @@ void divide(stack_t **stack, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->n /= (*stack)->n;
-	pop(stack, line_nunmber);
+	pop(stack, line);
 }
 /**
  * mul - multiplies second top element of stack with top element of stack
@@ -71,7 +71,7 @@ void mul(stack_t **stack, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->n *= (*stack)->n;
-	pop(stack, line_number);
+	pop(stack, line);
 }
 /**
  * mod - computes the rest of the division of the second top element of
@@ -87,7 +87,7 @@ void mod(stack_t **stack, unsigned int line)
 	while (aux->next)
 	{
 		len++;
-		aux = aux->nex;
+		aux = aux->next;
 	}
 	if (len < 2)
 	{
