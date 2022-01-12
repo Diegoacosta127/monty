@@ -16,6 +16,7 @@ void *get_function(char **list)
 		{"pint", pint},
 		{"swap", NULL},
 		{"add", NULL},
+		{"nop", NULL},
 		{NULL, NULL}
 	}
 

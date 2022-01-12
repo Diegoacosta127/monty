@@ -1,6 +1,9 @@
 #include "monty.h"
 /**
-  */
+ * push - pushes an element to the stack.
+ * @stack: head of stack (double linked list)
+ * @line_number: line number in file
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = malloc(sizeof(stack_t));
@@ -27,7 +30,10 @@ void push(stack_t **stack, unsigned int line_number)
 	*stack = new;
 }
 /**
-  */
+ * pall - prints all values on the stack, starting from top of the stack
+ * @stack: head of stack (double linked list)
+ * @line_number: line number in file
+ */
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *aux = *stack;
@@ -45,7 +51,10 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 }
 /**
-  */
+ * pint - prints all values on the stack, starting from the the bottom
+ * @stack: head of stack (double linked list)
+ * @line_number: line number in file
+ */
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!stack)
@@ -53,10 +62,13 @@ void pint(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pint", line_number);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d", (*stack)->n;);
+	printf("%d", (*stack)->n);
 }
 /**
-  */
+ * pop - removes the top element of the stack.
+ * @stack: head of stack (double linked list)
+ * @line_number: line number in file
+ */
 void pop(stack_t **stack, unsigned int line_number)
 {
 	if (!(*stack))
@@ -69,12 +81,15 @@ void pop(stack_t **stack, unsigned int line_number)
 	(*stack)->prev = NULL;
 }
 /**
-  */
+ * swap - swaps the top two elements of the stack.
+ * @stack: head of stack (double linked list)
+ * @line_number: line number in file
+ */
 void swap(stack_t **stack, unsigned int line_number)
 {
 	int aux1, aux2, len = 0;
 	stack_t *aux = *stack;
-	
+
 	while (aux->next)
 	{
 		len++;
@@ -90,24 +105,3 @@ void swap(stack_t **stack, unsigned int line_number)
 	(*stack)->n = aux2;
 	(*stack)->next->n = aux1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
