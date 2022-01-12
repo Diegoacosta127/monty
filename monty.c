@@ -23,18 +23,18 @@ int main(int argc, char *argv[])
 	}
 	read(fd, buf, 1024);
 	tok[0] = strtok(buf, "\n");
-	printf("Hizo un strtok\n");
+	//printf("Hizo un strtok\n");
 	for (i = 0; *(tok + i);)
 	{
 		i++;
 		*(tok + i) = strtok(NULL, "\n");
 	}
-	j = 0;
-	printf("tokenizó todo el archivo\n");
-	while (*(tok + j))
+	//printf("tokenizó todo el archivo\n");
+	for (j = 0; *(tok + j); j++)
 	{
-		printf("%s\n", *(tok + j));
-		j++;
+		printf("voy a entrar a get_function\n");
+		get_function(tok);
+
 	}
 	return (0);
 }
