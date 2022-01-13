@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * nop - useful function
  * @stack: head of stack (double linked list)
@@ -19,7 +18,7 @@ void pchar(stack_t **stack, unsigned int line)
 {
 	if (!(*stack))
 	{
-		fprintf(stderr, "L%u : can't pchar, stack empty\n", line);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n < 0 || (*stack)->n > 127)
@@ -29,4 +28,20 @@ void pchar(stack_t **stack, unsigned int line)
 	}
 	putchar((*stack)->n);
 	putchar(10);
+}
+void pstr(stack_t **stack, unsigned int line)
+{
+	(void)line;
+	if (!(*stack))
+	{
+		putchar(10);
+	}
+	while ((*stack)->next)
+	{
+		if((*stack)->n < 0 || (*stack)->n > 127)
+			return;
+		putchar((*stack)->n);
+		*stack = (*stack)->next;
+	}
+	return;
 }
