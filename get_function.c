@@ -14,9 +14,11 @@ void *get_function(char **list)
 		{"pall", pall},
 		{"pop", pop},
 		{"pint", pint},
-		{"swap", NULL},
+		{"swap", swap},
 		{"add", NULL},
 		{"nop", NULL},
+		{"sub", sub},
+		{"divide", divide},
 		{NULL, NULL}
 	};
 
@@ -24,7 +26,7 @@ void *get_function(char **list)
 	{
 		i = 0;
 		command = strtok(list[position], " ");
-		printf("2strtok - %s\n", command);
+		/*printf("2strtok - %s\n", command);*/
 		/* if line starts with a space char at this point, skip*/
 		if (command == 0)
 			continue;
@@ -37,4 +39,5 @@ void *get_function(char **list)
 			i++;
 		}
 	}
+	return (0);
 }

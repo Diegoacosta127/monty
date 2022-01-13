@@ -9,6 +9,7 @@ void push(stack_t **stack, unsigned int line_number)
 	char *numstr;
 	int correct;
 	stack_t *new = malloc(sizeof(stack_t));
+
 	if (!new)
 		exit(EXIT_FAILURE);
 	numstr = strtok(NULL, " ");
@@ -104,7 +105,7 @@ void swap(stack_t **stack, unsigned int line)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr,"L%u: can't swap, stack too short", line);
+		fprintf(stderr, "L%u: can't swap, stack too short", line);
 		exit(EXIT_FAILURE);
 	}
 	aux1 = (*stack)->n;
