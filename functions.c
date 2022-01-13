@@ -28,7 +28,10 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	new = malloc(sizeof(stack_t));
 	if (!new)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
+	}
 	new->n = correct;
 	new->prev = NULL;
 	new->next = NULL;
@@ -52,10 +55,7 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 	if (!aux)
-	{
-		fprintf(stderr, "Can't pall\n");
-		exit(EXIT_FAILURE);
-	}
+		return;
 	while (aux)
 	{
 		fprintf(stdout, "%d\n", aux->n);
@@ -75,7 +75,6 @@ void pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	fprintf(stdout, "%d\n", (*stack)->n);
-	free_stack(*stack);
 }
 /**
  * pop - removes the top element of the stack.
