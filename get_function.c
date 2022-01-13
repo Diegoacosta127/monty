@@ -39,9 +39,8 @@ void get_function(char **list)
 		{
 			/*if command in line matches command in stuct opcode*/
 			if (strcmp(instr_list[i].opcode, command) == 0)
-				instr_list[i].f(&stack, position);
+				instr_list[i].f(&stack, position + 1);
 			i++;
 		}
 	}
-	return;
 }

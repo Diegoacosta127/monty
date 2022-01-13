@@ -1,9 +1,14 @@
 #include "monty.h"
+
+/**
+ * nop - useful function
+ * @stack: head of stack (double linked list)
+ * @line: line number in file
+ */
 void nop(stack_t **stack, unsigned int line)
 {
 	(void)stack;
 	(void)line;
-	return;
 }
 /**
  * pchar - prints the char at the top of the stack, followed by a new line.
