@@ -2,6 +2,7 @@
 /**
   * get_function - checks function in a certain line
   * @list: pointer to pointer of char
+  * Return: void
   */
 void *get_function(char **list)
 {
@@ -15,10 +16,12 @@ void *get_function(char **list)
 		{"pop", pop},
 		{"pint", pint},
 		{"swap", swap},
-		{"add", NULL},
-		{"nop", NULL},
+		{"add", add},
 		{"sub", sub},
-		{"divide", divide},
+		{"div", divide},
+		{"mul", mul},
+		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 

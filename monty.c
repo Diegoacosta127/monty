@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
 	}
 	sizef = read(fd, buf, 1024);
 	buf[sizef] = 0;
-	/*printf("buffer - %s\n", buf);
-	printf("--------------\n");*/
+	/*printf("buffer - %s\n", buf);*/
+	/*printf("--------------\n"); */
 	tok[0] = strtok(buf, "\n");
 	/*printf("strtok - %s\n", tok[0]);*/
 	for (i = 0; tok[i];)
