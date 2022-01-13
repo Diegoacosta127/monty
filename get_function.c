@@ -4,11 +4,11 @@
   * @list: pointer to pointer of char
   * Return: void
   */
-void get_function(char **list)
+void get_function(char **list, stack_t *stack)
 {
 	unsigned int position, i;
 	char *command;
-	stack_t *stack = NULL;
+
 	/* {opcode, function} */
 	instruction_t instr_list[] = {
 		{"push", push},

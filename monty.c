@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 {
 	int fd, i, sizef;
 	char buf[1024], *tok[1024];
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
@@ -34,6 +35,7 @@ int main(int argc, char *argv[])
 		/*printf("strtok - %s\n", tok[i]);*/
 	}
 	/*printf("voy a entrar a get_function\n");*/
-	get_function(tok);
+	get_function(tok, stack);
+	free_stack(stack);
 	return (0);
 }

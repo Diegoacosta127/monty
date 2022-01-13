@@ -71,6 +71,7 @@ void pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	fprintf(stdout, "%d\n", (*stack)->n);
+	free_stack(*stack);
 }
 /**
  * pop - removes the top element of the stack.
