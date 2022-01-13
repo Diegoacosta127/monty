@@ -13,17 +13,21 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!new)
 		exit(EXIT_FAILURE);
 	numstr = strtok(NULL, " ");
-	if (numstr[0] == '0')
-		new->n = 0;
-	else
+	/* printf("3strtok - %s\n", numstr); */
+	/*if there is an int arg for push */
+	if (numstr)
 	{
-		correct = atoi(numstr);
-		new->n = correct;
+		if (numstr[0] == '0')
+			new->n = 0;
+		else
+		{
+			correct = atoi(numstr);
+			new->n = correct;
+		}
 	}
-	/*printf("3strtok - %d\n", new->n);*/
 	new->prev = NULL;
 	new->next = NULL;
-	if (!correct)
+	if (!numstr || !correct)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
