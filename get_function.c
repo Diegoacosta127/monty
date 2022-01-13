@@ -19,7 +19,7 @@ void get_function(char **list, stack_t *stack)
 	for (pos = 0; list[pos]; pos++)
 	{
 		i = 0;
-		command = strtok(list[pos], " ");
+		command = strtok(list[pos], "\t ");
 		/*printf("2strtok - %s\n", command);*/
 		/* if line starts with a space char at this point, skip*/
 		if (command == 0)
@@ -37,7 +37,8 @@ void get_function(char **list, stack_t *stack)
 				if (!(instr_list[i].opcode))
 				{
 					fprintf(stderr,
-					"L%u: unknown instruction\n", pos + 1);
+					"L%u: unknown instruction %s\n",
+					pos + 1, command);
 					free_stack(stack);
 					exit(EXIT_FAILURE);
 				}
