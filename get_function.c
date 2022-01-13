@@ -4,7 +4,7 @@
   * @list: pointer to pointer of char
   * Return: void
   */
-void *get_function(char **list)
+void get_function(char **list)
 {
 	unsigned int position, i;
 	char *command;
@@ -43,5 +43,5 @@ void *get_function(char **list)
 			i++;
 		}
 	}
-	return (0);
+	return;
 }
