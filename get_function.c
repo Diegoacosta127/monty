@@ -13,7 +13,7 @@ void get_function(char **list, stack_t *stack)
 		{"push", push}, {"pall", pall}, {"pop", pop}, {"pint", pint},
 		{"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
 		{"div", divide}, {"mul", mul}, {"mod", mod}, {"pchar", pchar},
-		{NULL, NULL}
+		{"#", nop}, {NULL, NULL}
 	};
 
 	for (pos = 0; list[pos]; pos++)
