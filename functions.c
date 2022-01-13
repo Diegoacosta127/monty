@@ -25,7 +25,7 @@ void push(stack_t **stack, unsigned int line_number)
 	new->next = NULL;
 	if (!correct)
 	{
-		fprintf(stderr, "L%u: usage: push integer", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (!(*stack))
@@ -49,7 +49,7 @@ void pall(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	if (!aux)
 	{
-		fprintf(stderr, "Can't pall");
+		fprintf(stderr, "Can't pall\n");
 		exit(EXIT_FAILURE);
 	}
 	while (aux)
@@ -67,7 +67,7 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!stack)
 	{
-		fprintf(stderr, "L%u: can't pint", line_number);
+		fprintf(stderr, "L%u: can't pint\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	fprintf(stdout, "%d\n", (*stack)->n);
@@ -81,7 +81,7 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	if (!(*stack))
 	{
-		fprintf(stderr, "L%u: can't pop an empty stack", line_number);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (!((*stack)->next))
@@ -111,7 +111,7 @@ void swap(stack_t **stack, unsigned int line)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short", line);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	auxn = (*stack)->n;
