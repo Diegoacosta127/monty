@@ -69,7 +69,7 @@ void pint(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pint", line_number);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d", (*stack)->n);
+	printf("%d\n", (*stack)->n);
 }
 /**
  * pop - removes the top element of the stack.
@@ -83,6 +83,12 @@ void pop(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pop an empty stack", line_number);
 		exit(EXIT_FAILURE);
 	}
+	if (!((*stack)->next))
+	{
+		*stack = NULL;
+		free(*stack);
+		return;
+	}
 	*stack = (*stack)->next;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
@@ -94,10 +100,10 @@ void pop(stack_t **stack, unsigned int line_number)
  */
 void swap(stack_t **stack, unsigned int line)
 {
-	int aux1, aux2, len = 0;
+	int auxn, len = 0;
 	stack_t *aux = *stack;
 
-	while (aux->next)
+	while (aux)
 	{
 		len++;
 		aux = aux->next;
@@ -107,8 +113,7 @@ void swap(stack_t **stack, unsigned int line)
 		fprintf(stderr,"L%u: can't swap, stack too short", line);
 		exit(EXIT_FAILURE);
 	}
-	aux1 = (*stack)->n;
-	aux2 = (*stack)->next->n;
-	(*stack)->n = aux2;
-	(*stack)->next->n = aux1;
+	auxn = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = auxn;
 }

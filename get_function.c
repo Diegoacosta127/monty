@@ -14,9 +14,13 @@ void *get_function(char **list)
 		{"pall", pall},
 		{"pop", pop},
 		{"pint", pint},
-		{"swap", NULL},
-		{"add", NULL},
-		{"nop", NULL},
+		{"swap", swap},
+		{"add", add},
+		{"sub", sub},
+		{"div", divide},
+		{"mul", mul},
+		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 
