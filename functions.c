@@ -10,8 +10,6 @@ void push(stack_t **stack, unsigned int line_number)
 	int correct;
 	stack_t *new;
 
-	if (!new)
-		exit(EXIT_FAILURE);
 	numstr = strtok(NULL, " ");
 	/* printf("3strtok - %s\n", numstr); */
 	/*if there is an int arg for push */
@@ -29,6 +27,8 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	new = malloc(sizeof(stack_t));
+	if (!new)
+		exit(EXIT_FAILURE);
 	new->n = correct;
 	new->prev = NULL;
 	new->next = NULL;

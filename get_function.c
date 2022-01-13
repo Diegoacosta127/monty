@@ -2,7 +2,7 @@
 /**
   * get_function - checks function in a certain line
   * @list: pointer to pointer of char
-  * Return: void
+  * @stack: pointer to double linked list
   */
 void get_function(char **list, stack_t *stack)
 {
