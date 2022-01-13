@@ -29,6 +29,11 @@ void pchar(stack_t **stack, unsigned int line)
 	putchar((*stack)->n);
 	putchar(10);
 }
+/**
+ * pstr - prints the string starting at the top of the stack, and new line
+ * @stack: head of stack (double linked list)
+ * @line: line number in file
+ */
 void pstr(stack_t **stack, unsigned int line)
 {
 	(void)line;
@@ -38,10 +43,9 @@ void pstr(stack_t **stack, unsigned int line)
 	}
 	while ((*stack)->next)
 	{
-		if((*stack)->n < 0 || (*stack)->n > 127)
+		if ((*stack)->n < 0 || (*stack)->n > 127)
 			return;
 		putchar((*stack)->n);
 		*stack = (*stack)->next;
 	}
-	return;
 }
