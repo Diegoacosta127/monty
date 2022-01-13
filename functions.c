@@ -8,7 +8,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	char *numstr;
 	int correct;
-	stack_t *new = malloc(sizeof(stack_t));
+	stack_t *new;
 
 	if (!new)
 		exit(EXIT_FAILURE);
@@ -18,20 +18,20 @@ void push(stack_t **stack, unsigned int line_number)
 	if (numstr)
 	{
 		if (numstr[0] == '0')
-			new->n = 0;
+			correct = 0;
 		else
-		{
 			correct = atoi(numstr);
-			new->n = correct;
-		}
 	}
-	new->prev = NULL;
-	new->next = NULL;
 	if (!numstr || !correct)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
+	new = malloc(sizeof(stack_t));
+	new->n = correct;
+	new->prev = NULL;
+	new->next = NULL;
 	if (!(*stack))
 	{
 		*stack = new;

@@ -6,9 +6,10 @@
   */
 void free_stack(stack_t *stack)
 {
-	while (stack)
+	if (stack)
 	{
+		if (stack->next)
+			free_stack(stack->next);
 		free(stack);
-		stack = stack->next;
 	}
 }

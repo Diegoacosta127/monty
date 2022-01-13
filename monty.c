@@ -34,8 +34,7 @@ int main(int argc, char *argv[])
 		tok[i] = strtok(NULL, "\n");
 		/*printf("strtok - %s\n", tok[i]);*/
 	}
-	/*printf("voy a entrar a get_function\n");*/
+	/*printf("entering get_function\n");*/
 	get_function(tok, stack);
-	free_stack(stack);
 	return (0);
 }

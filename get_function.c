@@ -43,4 +43,5 @@ void get_function(char **list, stack_t *stack)
 			i++;
 		}
 	}
+	free_stack(stack);
 }
