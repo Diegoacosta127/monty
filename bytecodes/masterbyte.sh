@@ -32,7 +32,7 @@ echo -e "\n---------------\n"
 echo -e "\033[0;31m### TEST 4: push 1, push 2, pu 3 ###\033[0;37m"
 echo -e "\033[0;31m# 0unknownInstr.m  #\033[0;37m"
 echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
-echo "L2: unknown instruction pu"
+echo "L3: unknown instruction pu"
 echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
 ../monty 0unknownInstr.m 
 echo -e "---------------\n"
@@ -98,4 +98,20 @@ echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
 echo "1"
 echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
 ../monty 0spaces.m
+echo -e "---------------\n"
+
+echo -e "\033[0;31m### TEST 13: push  ###\033[0;37m"
+echo -e "\033[0;31m 0push3.m \033[0;37m"
+echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
+echo "L4: usage: push integer"
+echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
+../monty 0push3.m
+echo -e "---------------\n"
+
+echo -e "\033[0;31m### TEST 4: push 1, push 2, pu 3 ###\033[0;37m"
+echo -e "\033[0;31m 0push6.m \033[0;37m"
+echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
+echo "L6: usage: push integer"
+echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
+../monty 0push6.m
 echo -e "---------------\n"

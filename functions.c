@@ -7,24 +7,10 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	char *numstr;
-	int i;
 	stack_t *new;
 
 	numstr = strtok(NULL, " ");
-	if (!numstr)
-		numstr = "a";
-	for (i = 0; numstr[i]; i++)
-	{
-		if (numstr[i] >= '0' && numstr[i] <= '9')
-			continue;
-		else
-		{
-			fprintf(stderr,
-			"L%u: usage: push integer\n", line_number);
-			free_stack(*stack);
-			exit(EXIT_FAILURE);
-		}
-	}
+	chk_numstr(numstr, stack, line_number);
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{

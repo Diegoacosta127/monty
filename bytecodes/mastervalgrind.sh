@@ -32,7 +32,7 @@ echo -e "\n---------------\n"
 echo -e "\033[0;31m### TEST 4: push 1, push 2, pu 3 ###\033[0;37m"
 echo -e "\033[0;31m# 0unknownInstr.m  #\033[0;37m"
 echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
-echo "L2: unknown instruction pu"
+echo "L3: unknown instruction pu"
 echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
 valgrind --leak-check=yes ../monty 0unknownInstr.m 
 echo -e "---------------\n"
