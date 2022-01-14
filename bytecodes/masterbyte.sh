@@ -67,3 +67,19 @@ echo -e "3\n2\n1\n2\n1\n1"
 echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
 ../monty 2pop.m
 echo -e "---------------\n"
+
+echo -e "\033[0;31m### TEST 9: push 24a ###\033[0;37m"
+echo -e "\033[0;31m . \033[0;37m"
+echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
+echo "L1: usage: push integer"
+echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
+../monty 0push24a.m
+echo -e "---------------\n"
+
+echo -e "\033[0;31m### TEST 4: push 1 pall 67 ###\033[0;37m"
+echo -e "\033[0;31m . \033[0;37m"
+echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
+echo "1"
+echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
+../monty 0pall67.m
+echo -e "---------------\n"

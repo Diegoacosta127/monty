@@ -7,24 +7,23 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	char *numstr;
-	int correct, zero = 1;
+	int i;
 	stack_t *new;
 
 	numstr = strtok(NULL, " ");
-	/* printf("3strtok - %s\n", numstr); */
-	/*if there is an int arg for push */
-	if (numstr)
+	if (!numstr)
+		numstr = "a";
+	for (i = 0; numstr[i]; i++)
 	{
-		if (numstr[0] == '0')
-			zero = 0;
+		if (numstr[i] >= '0' && numstr[i] <= '9')
+			continue;
 		else
-			correct = atoi(numstr);
-	}
-	if (!numstr || !correct)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		free_stack(*stack);
-		exit(EXIT_FAILURE);
+		{
+			fprintf(stderr,
+			"L%u: usage: push integer\n", line_number);
+			free_stack(*stack);
+			exit(EXIT_FAILURE);
+		}
 	}
 	new = malloc(sizeof(stack_t));
 	if (!new)
@@ -32,10 +31,7 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	if (zero)
-		new->n = correct;
-	else
-		new->n = zero;
+	new->n = atoi(numstr);
 	new->prev = NULL;
 	new->next = NULL;
 	if (!(*stack))
