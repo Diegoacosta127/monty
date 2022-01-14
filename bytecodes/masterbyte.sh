@@ -68,18 +68,34 @@ echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
 ../monty 2pop.m
 echo -e "---------------\n"
 
-echo -e "\033[0;31m### TEST 9: push 24a ###\033[0;37m"
-echo -e "\033[0;31m . \033[0;37m"
+echo -e "\033[0;31m### TEST 9: push 24abc ###\033[0;37m"
+echo -e "\033[0;31m 0push24abc.m \033[0;37m"
 echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
 echo "L1: usage: push integer"
 echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
-../monty 0push24a.m
+../monty 0push24abc.m
 echo -e "---------------\n"
 
-echo -e "\033[0;31m### TEST 4: push 1 pall 67 ###\033[0;37m"
+echo -e "\033[0;31m### TEST 10: push 1 pall 67 ###\033[0;37m"
 echo -e "\033[0;31m . \033[0;37m"
 echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
 echo "1"
 echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
 ../monty 0pall67.m
+echo -e "---------------\n"
+
+echo -e "\033[0;31m### TEST 11: pusha ###\033[0;37m"
+echo -e "\033[0;31m . \033[0;37m"
+echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
+echo "L1: unknown instruction pusha"
+echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
+../monty 0pusha.m
+echo -e "---------------\n"
+
+echo -e "\033[0;31m### TEST 12: more spaces ###\033[0;37m"
+echo -e "\033[0;31m 0spaces.m \033[0;37m"
+echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
+echo "1"
+echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
+../monty 0spaces.m
 echo -e "---------------\n"
