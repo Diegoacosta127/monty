@@ -108,10 +108,26 @@ echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
 ../monty 0push3.m
 echo -e "---------------\n"
 
-echo -e "\033[0;31m### TEST 4: push 1, push 2, pu 3 ###\033[0;37m"
+echo -e "\033[0;31m### TEST 14: push ###\033[0;37m"
 echo -e "\033[0;31m 0push6.m \033[0;37m"
 echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
 echo "L6: usage: push integer"
 echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
 ../monty 0push6.m
+echo -e "---------------\n"
+
+echo -e "\033[0;31m### TEST 15: single pint ###\033[0;37m"
+echo -e "\033[0;31m 1pintempty.m \033[0;37m"
+echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
+echo "L1: can't pint, stack empty"
+echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
+../monty 1pintempty.m
+echo -e "---------------\n"
+
+echo -e "\033[0;31m### TEST 16: pop stuff ###\033[0;37m"
+echo -e "\033[0;31m . \033[0;37m"
+echo -e "\033[0;34m>>>>> EXPECTED <<<<<\033[0;32m"
+echo "1\n2\n3"
+echo -e "\033[0;34m>>>>> GOT <<<<<\033[0;37m"
+../monty 2pop3.m
 echo -e "---------------\n"
